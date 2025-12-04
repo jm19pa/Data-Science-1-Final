@@ -25,11 +25,11 @@ print("\nClassification Report:")
 print(classification_report(y_test, y_pred_log_reg, target_names=label_encoder.classes_, digits=4))
 
 #Logistic Regression Confusion Matrix
-pred_genres_xgb = label_encoder.inverse_transform(y_pred_log_reg)
+pred_genres_log = label_encoder.inverse_transform(y_pred_log_reg)
 true_genres = label_encoder.inverse_transform(y_test)
 results_df = pd.DataFrame({
     "True Genre": true_genres,
-    "Predicted Genre": pred_genres_xgb
+    "Predicted Genre": pred_genres_log
 })
 print(results_df.head(10))
 

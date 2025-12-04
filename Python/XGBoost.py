@@ -26,7 +26,10 @@ xgb_model = XGBClassifier(
 xgb_model.fit(X_train_scaled, y_train)
 y_pred_xgb = xgb_model.predict(X_test_scaled)
 
-print("XGBoost Classifier Accuracy:", accuracy_score(y_test, y_pred_xgb))
+print("=" * 80)
+print("XGBoost Classifier Results:")
+print("=" * 80)
+print(f"Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f}")
 print("XGBoost Classifier Classification Report:\n", classification_report(y_test, y_pred_xgb, target_names=label_encoder.classes_))
 # print("XGBoost Classifier Confusion Matrix:\n", confusion_matrix(y_test, y_pred_xgb))
 
